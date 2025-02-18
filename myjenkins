@@ -2,10 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Publish') {
+        stage('Hello') {
             steps {
-                echo 'Publishing HTML Page.............'
-                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'Default.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+                echo 'Hello World'
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, includes: '**/*.css', keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+                
             }
         }
     }
